@@ -79,8 +79,7 @@ Tabular Column :
 
 | Width |	Current(Id) |	Vout  |
 
-|:--- | :---: |  ---: |
-
+| :---         |     :---:      |          ---: |
 | 1um	  |   74.2uA	   | 0.122  |
 
 | 0.8um |  72.7uA	      | 0.155  |
