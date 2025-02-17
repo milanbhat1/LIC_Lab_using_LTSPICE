@@ -1,5 +1,6 @@
 EXPERIMENT - 1
 
+Design 1
 AIM:
 To do the DC analysis,Transient and AC analysis of a CS amplifier circuit and extract the various parameters associated using LT Spice.
 
@@ -78,15 +79,15 @@ Tabular Column :
 
 | Width |	Current(Id) |	Vout  |
 
+|---|---|---|
 
+| 1um	  |   74.2uA	   | 0.122  |
 
-| 1um	  |  74.2uA	    | 0.122 |
+| 0.8um |  72.7uA	      | 0.155  |
 
-| 0.8um	|  72.7uA	    | 0.155 |
+| 0.7um |  71.65uA	   | 0.18   |
 
-| 0.7um	|  71.65uA	  | 0.18  |
-
-| 0.3um |	 55.55uA	  | 0.543 |
+| 0.3um |	 55.55uA	   | 0.543  |
 
 RESULTS:
 
@@ -111,7 +112,8 @@ DC Operating point : (0.543,55uA) is obtained for 0.3um Width and 180nm Length.
 There is 180 degree phase shift between input and output or the DC level shift.
 
 3. AC Analysis:
-   *image*
+   ![Screenshot 2025-02-17 093256](https://github.com/user-attachments/assets/f525de3e-8024-404c-addf-81cbb1ef23a8)
+
 
    
 INFERENCE:
