@@ -1,10 +1,12 @@
 EXPERIMENT - 1
 
 Design 1
+
+
 AIM:
 To do the DC analysis,Transient and AC analysis of a CS amplifier circuit and extract the various parameters associated using LT Spice.
 
-:COMPONENTS REQUIRED:
+COMPONENTS REQUIRED:
 
 N Mosfet(nmos4 ,pmos4 ), Resistor(22k), voltage supply(1.8V,0.9V) and connecting wires.
 
@@ -80,6 +82,7 @@ Tabular Column :
 | Width |	Current(Id) |	Vout  |
 
 |---|---| --- |
+
 | 1um	  |   74.2uA	   | 0.122  |
 
 | 0.8um |  72.7uA	      | 0.155  |
@@ -133,7 +136,10 @@ This is essential in high speed applications.
 Also helps in understanding the frequency response and small signal behaviour of the circuit.
 
 
-Circuit 2:
+Design 2:
+
+![Screenshot 2025-02-17 105157](https://github.com/user-attachments/assets/6f500785-bc4c-4804-a921-df2c6b1c6ada)
+
 
 
 Theory :
@@ -216,11 +222,17 @@ Simulation Result:
 
 1. DC Analysis:
 
-   *image
+![Screenshot 2025-02-17 095916](https://github.com/user-attachments/assets/4f363800-220c-4b34-ba49-e41b83209b16)
+
+   
 2. Transient Analysis:
-   *image
-3. AC Analysis:
-  *image
+   
+  ![Screenshot 2025-02-17 104745](https://github.com/user-attachments/assets/cf4d15dc-4b4d-4a02-bb39-956e05533eeb)
+
+4. AC Analysis:
+
+![Screenshot 2025-02-17 105023](https://github.com/user-attachments/assets/3619f75f-14d0-49ce-927b-078382dd1ca0)
+
 
 
 INFERENCE:
