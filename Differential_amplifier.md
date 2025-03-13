@@ -219,14 +219,11 @@ Determine RSS -
 
       Bandwidth = 18.610GHz
 
-****For Above Circuits(1, 2 & 3) the Length(l) & width(w) values are****
-    
-    l1 = l2 = l3 = 180nm
-    w1 = w2 = 7.7165μm
-    w3 = 35.091μm
 
 ## Results:
+
 ### Comparision between the Circuit 1,2,3:
+
 | **Parameter** | **Circuit 1** | **Circuit 2** | **Circuit 3** |
 |--------------|--------------|--------------|--------------|
 | **Vout1**  | 1.4V  | 1.402V  | 1.40001V  |
@@ -236,4 +233,59 @@ Determine RSS -
 | **Id(M2)** | 0.000601092 A | 0.0006 A | 0.000601089 A |
 | **Total Current(ISS)** | 0.0012 A | 0.000909 A | 0.00120218 A |
 
+### Length(L) and Width(W) of M1, M2, M3 transistors :
+
+| **Parameter** | **M1** | **M2** | **M3** |
+|--------------|--------------|--------------|--------------|
+| **Length(L)**  | 180nm  | 180nm  | 180nm  |
+| **Width(W)**  | 7.7165μm  | 7.7165μm  | 35.091μm  |
+
+### Variation Of Vincm to Circuit 1, 2 & 3:
+#### For Circuit 1:
+| **Vincm1 & Vincm2** | **Vout1 & Vout2** | **Gain1 & Gain2** |
+|--------------|--------------|--------------|
+| 1.3  | 1.4  | 1.076  |   
+| 1.5  |  1.11 | 0.74  |   
+| 2  | 0.865  | 0.4325  |   
+| 2.5  |  0.842 | 0.3368  |   
+
+#### For Circuit 2:
+| **Vincm1 & Vincm2** | **Vout1 & Vout2** | **Gain1 & Gain2** |
+|--------------|--------------|--------------|
+| 1.3  | 1.402  | 1.078  |   
+| 1.5  |  1.402 | 0.934  |   
+| 2 | 1.402  | 0.701  |   
+| 2.5  |  1.402 | 0.5608  |  
+
+#### For Circuit 3:
+| **Vincm1 & Vincm2** | **Vout1 & Vout2** | **Gain1 & Gain2** |
+|--------------|--------------|--------------|
+| 1.3  | 1.40001  | 1.0769  |   
+| 1.5  |  1.2394 | 0.8262  |   
+| 2  | 1.16223  | 0.58111  |  
+| 2.5  |  1.16223 | 0.46488  | 
+
 ## Inference:
+
+| **Parameter**                  | **Circuit 1 (With RSS)**       | **Circuit 2 (With ISS - Current Mirror)** | **Circuit 3 (MOSFET Differential Pair)** | **Inference**  |
+|--------------------------------|--------------------------------|--------------------------------|--------------------------------|---------------|
+| **Common Mode Rejection Ratio (CMRR)** | **Lower** | **Higher than RSS circuit** | **Highest** | Using **ISS (current source)** and **MOSFETs** improves CMRR significantly. |
+| **Power Consumption**          | **Higher**                     | **Lower than RSS**             | **Lowest**                     | **MOSFET-based circuit** is more power-efficient. |
+| **Current Source Used**        | **Resistive (RSS)**            | **Active (ISS - Current Mirror)** | **MOSFET Current Source**      | Active current sources provide better biasing and stability. |
+| **Output Common-Mode Voltage** | **Less Stable**                | **More stable**                | **Most Stable**                | **MOSFET-based ISS** gives the best output voltage stability. |
+| **Frequency Response**         | **Limited Bandwidth**          | **Improved Bandwidth**         | **Widest Bandwidth**           | **MOSFET differential pair** extends the bandwidth. |
+
+- **Tail Current Stability:**
+
+    **Circuit 1 & 2:** ISS current is determined by passive resistors, leading to potential fluctuations.
+
+    **Circuit 3:** Incorporates M3 as a current source, ensuring stable and regulated tail current.
+
+- **Common-Mode Voltage (Vp):** Minor variations observed across circuits; however, Circuit 3 exhibits the most stable Vp due to the active current source.
+
+- **Output Voltage Matching:** All circuits show closely matched output voltages, indicating effective differential performance.
+
+## Conclusion:
+- **Circuit 3** performs the best in terms of gain, power efficiency, and common-mode rejection, making it the most optimized design.
+- **Circuit 2** improves upon Circuit 1 with better gain, reduced mismatch, and improved bandwidth, but still falls short of Circuit 3.
+- **Circuit 1** is functional but has the lowest gain and slightly higher power consumption compared to the other two.
