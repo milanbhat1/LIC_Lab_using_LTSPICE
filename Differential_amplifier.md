@@ -267,11 +267,11 @@ Determine RSS -
 
 ## Inference:
 
-| **Parameter**                  | **Circuit 1 (With RSS)**       | **Circuit 2 (With ISS - Current Mirror)** | **Circuit 3 (MOSFET Differential Pair)** | **Inference**  |
+| **Parameter**                  | **Circuit 1 (With RSS)**       | **Circuit 2 (With ISS )** | **Circuit 3 (MOSFET Differential Pair)** | **Inference**  |
 |--------------------------------|--------------------------------|--------------------------------|--------------------------------|---------------|
 | **Common Mode Rejection Ratio (CMRR)** | **Lower** | **Higher than RSS circuit** | **Highest** | Using **ISS (current source)** and **MOSFETs** improves CMRR significantly. |
 | **Power Consumption**          | **Higher**                     | **Lower than RSS**             | **Lowest**                     | **MOSFET-based circuit** is more power-efficient. |
-| **Current Source Used**        | **Resistive (RSS)**            | **Active (ISS - Current Mirror)** | **MOSFET Current Source**      | Active current sources provide better biasing and stability. |
+| **Current Source Used**        | **Resistive (RSS)**            | **Active (ISS)** | **MOSFET Current Source**      | Active current sources provide better biasing and stability. |
 | **Output Common-Mode Voltage** | **Less Stable**                | **More stable**                | **Most Stable**                | **MOSFET-based ISS** gives the best output voltage stability. |
 | **Frequency Response**         | **Limited Bandwidth**          | **Improved Bandwidth**         | **Widest Bandwidth**           | **MOSFET differential pair** extends the bandwidth. |
 
