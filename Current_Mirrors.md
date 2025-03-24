@@ -25,6 +25,12 @@ To Design a basic Current Mirror for the following specification:
 - AC analysis
 - Comparision between the Circuit 1,2
 
+  ### Components Required:
+- MOSFET (CMOSN)
+- Voltage supply
+- current Source
+- Connecting wires
+
 ### Theory:
 
 A current mirror is a fundamental circuit used in analog design to replicate a reference current with high accuracy. It consists of two MOSFETs: one configured as a diode-connected transistor, which sets a gate-source voltage (VGS) corresponding to the reference current (IREF), and another transistor that mirrors this current to an output. The principle relies on matching identical MOSFETs, ensuring that the output current closely follows the reference current if channel-length modulation is negligible. Current mirrors are widely used in biasing circuits, operational amplifiers, and analog signal processing due to their ability to provide a stable current source independent of temperature and process variations. However, mismatches between transistors and finite output resistance can introduce errors, requiring careful layout and design considerations.
@@ -244,9 +250,137 @@ Working Principle of Current Mirror (Point-wise)
 
 
 # Part B:
+# Differential Amplifier With Current Mirror
+
+### Aim:
+To Design a basic diffrential amplifier for the following specification:
+- Supply Voltage (VDD) = 2.5V
+- Power Consumption (P) <= 3mW
+- Input Common Mode Voltage (Vincm) = 1.3V
+- Output Differential Common Mode Voltage (V0cm) = 1.4V
+- Vp = 0.5V
+  
+#### Perform:
+- DC Analysis
+- Transient Analysis
+- AC analysis
+- Comparision between the Circuit 1,2,3
+
+### Components Required:
+- MOSFET (CMOSN)
+- Resistors: 1.83 kΩ x 2, 416.66 Ω
+- Voltage supply
+- current Source
+- Connecting wires
+
+### Theory:
+
+A differential amplifier with a current mirror is a widely used circuit in analog design that enhances gain, stability, and performance. The circuit consists of a differential pair (M1 and M2) and an active current mirror (M3 and M4) as the load. The differential input voltage causes a change in the drain currents of M1 and M2, which are then mirrored by M3 and M4 to produce a single-ended output voltage. This configuration ensures that the small-signal drain current of M1 is efficiently used, enhancing the circuit’s gain. Compared to a passive load, an active current mirror increases the amplifier’s output resistance, which directly improves the voltage gain.
+
+In the five-transistor operational transconductance amplifier (OTA), the current mirror actively replicates and directs the current to the output, ensuring better signal conversion. When a differential input is applied, the current through M1 increases, causing M3 to conduct more current and pushing more current through M4 to the output. Simultaneously, M2 draws less current, which is mirrored by M4, reducing its conduction. This push-pull operation increases the gain and ensures better common-mode rejection. However, one limitation is that the voltage headroom is reduced, making low-voltage operation challenging. Additionally, matching of transistors is crucial for high precision and minimized mismatch errors.
 
 
+### Design:
 
+    Given- Vdd=1.8V , P<=1mV
+    So, ISS = P/Vdd
+                = 3m/2.5
+        ISS = 1.2mA
+                
     
+Here we are making 1:1 Current Mirror ratio so, ISS = Iref.
+
+     Iref = 1.2mA
+
+Circuit Diagram:
+
+<img width="650" alt="ac2" src="https://github.com/user-attachments/assets/9d01e6c5-aad3-46d7-80d0-9b97fd3caeae" />
+
+
+### DC Analysis:
+
+<img width="600" alt="ac2" src="https://github.com/user-attachments/assets/5a8a6913-74fb-4254-a966-c8b5a7a4b14a" />
+
+
+### Transient Analysis:
+
+<img width="600" alt="ac2" src="https://github.com/user-attachments/assets/500053d2-d25d-4c52-a9fd-5ba7b19f12b8" />
+
+**Gain Calculation:**
+
+    Gain,Av = Vout/VIn
+            = (1.7018-0.8726)/(1.349-1.25)
+            = 8.375
+    Gain in dB = 20log(Av)
+               = 20log(8.375)
+               = 18.459
+
+### AC Analysis:
+
+<img width="600" alt="ac2" src="https://github.com/user-attachments/assets/2d3e7f4f-1c1e-4259-a870-55030041acc3" />
+
+**Bandwidth of Av:**
+
+      Bandwidth = 1MHz
+      
+**Bandwidth of -3dB gain:**
+
+      Bandwidth = 7.9614GHz
+
+## Inference:
+
+  
+**Node Values:**
+
+| **Parameter**       | **Values**  |  
+|---------------------|-------------|  
+| **Vout1**          | 1.400V       |  
+| **Vout2**          | 1.400V       |  
+| **V(Vp)**          | 0.5009V      |  
+| **Id(M1)**         | 0.000601 A   |  
+| **Id(M2)**         | 0.000601 A   |  
+| **Total Current (ISS)** | 0.001202 A  | 
+
+
+**Each Transistor Width (W) and Length(L) values:**
+
+| Transistor | Width (W) [μm] | Length (L) [nm] |
+|------------|--------------|--------------|
+| M1         |  7.7165       |    180     |
+| M2         |  7.7165u       |   180       |
+| M3         |  51.45       |    180      |
+| M4         |  49.1       |     180    |
+| M5         |  1.45395       |   180       |
+| M6         |  1.45395       |   180       |
+
+- **M1 & M2**: Used in the **differential amplifier**.
+- **M3 & M4**: Part of the **current mirror**.
+- **M5 & M6**: Additional transistors for circuit stability or gain adjustment.
+
+  
+**Compararison between Differential Amplifier with and Without Current Mirror:**
+
+| **Parameter**            | **Without Current Mirror** | **With Current Mirror** | **Explanation** |  
+|--------------------------|---------------------------|-------------------------|-----------------|  
+| **Gain (Av)**           | Lower                      | Higher                  | A current mirror improves biasing, leading to better gain. |  
+| **CMRR**                | Lower                      | Higher                  | Better current source improves common-mode rejection ratio. |  
+| **Power Consumption**   | Higher                     | Lower                   | A current mirror reduces wasted current, improving efficiency. |  
+| **Output Swing**        | Limited                    | Improved                 | A current mirror provides better bias stability, enhancing output range. |  
+
+
+### **Conclusion**  
+
+- **Improved Performance:** The use of a current mirror in a differential amplifier enhances gain, common-mode rejection, and stability.  
+
+- **Better Power Efficiency:** A current mirror reduces power consumption by providing an efficient biasing technique.  
+
+- **Enhanced Output Swing:** The output voltage range improves due to better bias stability and reduced variations.  
+
+- **Higher CMRR:** The ability to reject common-mode signals increases significantly, making the circuit more reliable.  
+
+- **Preferred for Precision Applications:** Due to improved performance, differential amplifiers with current mirrors are widely used in high-precision analog circuits like Operational Transconductance Amplifiers (OTA). 
+
+
+
 
 
