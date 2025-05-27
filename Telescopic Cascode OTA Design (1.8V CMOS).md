@@ -113,5 +113,5 @@ We sincerely thank **Dr. Remya Jayachandran**, Department of Electronics and Com
 
 ## Contributors
 
-- Ballambettu Milan Shankar Bhat  
-- Anirudha Jayaprakash
+- Ballambettu Milan Shankar Bhat (4NI23EC019) 
+- Anirudha Jayaprakash (4NI23EC014)
