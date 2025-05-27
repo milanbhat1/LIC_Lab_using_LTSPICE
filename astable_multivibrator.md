@@ -12,10 +12,8 @@
 
 ---
 
-## Part A: Basic Current Mirror Design
-
 ### Aim
-To design a basic current mirror for the following specifications:
+To design a astable multivibrator for the following specifications:
 - **Supply Voltage (VDD):**  
 - **Power Consumption (P):**   
 - **Gain (Av):** 
