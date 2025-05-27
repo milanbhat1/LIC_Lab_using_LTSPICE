@@ -13,25 +13,9 @@
 ---
 
 ### Aim
-To design a astable multivibrator for the following specifications:
-- **Supply Voltage (VDD):**  
-- **Power Consumption (P):**   
-- **Gain (Av):** 
-
-**Analysis Performed:**
-- DC Analysis
-- Transient Analysis
-- AC Analysis
-
+Generate pulse of width 0.5 ms using input triggers.
 ---
 
-### Components Required
-- 555 Timer
-- Voltage Supply
-- Current Source
-- Connecting Wires
-
----
 
 ### Theory
 
