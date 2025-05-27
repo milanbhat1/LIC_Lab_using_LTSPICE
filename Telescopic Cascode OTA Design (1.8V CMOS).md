@@ -26,7 +26,7 @@ The circuit includes:
 
 The stacked configuration increases output resistance, enabling higher gain.
 
-<img src="circuit_diagram.png" alt="Telescopic OTA Circuit" width="600"/>
+<img src="images/circuit_diagram.png" alt="Telescopic OTA Circuit" width="600"/>
 
 ## 3. Working Principle
 
@@ -62,13 +62,13 @@ AC analysis yields:
 - **3-dB Bandwidth**: ~963.5 Hz
 - **UGBW**: Between 50–100 kHz
 
-<img src="ac_response.png" alt="AC Response of OTA" width="600"/>
+<img src="images/ac_response.png" alt="AC Response of OTA" width="600"/>
 
 ### 5.2 Transient Simulation
 
 A sinusoidal input (±1 mV @ 1 kHz) produces a clean output sine wave of ±50 mV, validating the expected gain and linear small-signal behavior.
 
-<img src="transient_output.png" alt="Transient Output" width="600"/>
+<img src="images/transient_output.png" alt="Transient Output" width="600"/>
 
 ### 5.3 Phase Response
 
